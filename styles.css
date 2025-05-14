@@ -1,0 +1,134 @@
+:root {
+    --main-bg: #0b1c39;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+    --button-bg: #ff005c;
+    --button-color: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg);
+    color: var(--card-bg);
+  }
+  
+  header {
+    text-align: center;
+    padding: 1em;
+  }
+  
+  header h1 {
+    font-size: 3rem; 
+    color: var(--card-bg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .search-section {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    padding: 1em;
+  }
+  
+  .search-section input {
+    padding: 0.5em;
+    font-size: 1em;
+    border: none;
+    border-bottom: 2px solid var(--card-bg);
+    background: transparent;
+    color: var(--card-bg);
+    font-size: 1.2rem;
+    padding: 0.5em 0;
+    outline: none;
+  }
+  
+  .search-section input::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+  }
+  
+  .search-section button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    padding: 0.8em 1.5em; 
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-section button:hover {
+    background-color: #e6004f;
+  }
+  
+  .cards-section {
+    display: flex;
+    flex-direction: row; 
+    gap: 1em;
+    padding: 1em;
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+  }
+  
+  @media (min-width: 1000px) {
+    .cards-section {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 999px) and (min-width: 700px) {
+    .cards-section {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 699px) and (min-width: 500px) {
+    .cards-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 499px) {
+    .cards-section {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .search-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .weather-card {
+    
+    width: 100%;
+    max-width: 300px; 
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out; 
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  footer {
+    text-align: center; 
+    margin-top: 2em; 
+    padding: 1em;
+    background-color: var(--main-bg); 
+    color: var(--card-bg); 
+  }
